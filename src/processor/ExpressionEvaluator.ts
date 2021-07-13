@@ -1,16 +1,4 @@
-import {
-  BinaryOperation,
-  BinaryOperator,
-  Bracket,
-  Expression,
-  ExpressionVisitor,
-  Function,
-  Number,
-  String,
-  UnaryOperation,
-  UnaryOperator,
-  Variable,
-} from '../models';
+import { BinaryOperation, BinaryOperator, Bracket, Expression, ExpressionVisitor, Number, String, UnaryOperation, UnaryOperator, Variable } from '../models';
 import { Errors } from './Errors';
 import { ProcessorException } from './ProcessorException';
 import { Variables } from './Variables';
@@ -113,14 +101,16 @@ class ExpressionEvaluator implements ExpressionVisitor {
     b.innerExpression.visit(this);
   }
 
-  onFunction(_f: Function) {
+  onFunction() {
     throw new Error('Not yet implemented');
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-types
   onNumber(n: Number) {
     this.value = n.value;
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-types
   onString(s: String) {
     this.value = s.value;
   }

@@ -52,7 +52,7 @@ export class Parser {
     return this.char === Constants.DEF_FIELD_BEGIN || this.char === Constants.DEF_FIELD_END;
   }
 
-  assertNotLineOrFileEnd() {
+  assertNotLineOrFileEnd(): void {
     ParserException.assert(!isLineOrFileEnd(this.token), this, Errors.UNEXPECTED_LINE_OR_FILE_END);
   }
 
@@ -77,8 +77,7 @@ export class Parser {
     } else if (this.enableBraceComments && this.char === Constants.OPENING_BRACE) {
       this.token = { type: TokenType.COMMENT, whiteSpace, value: this.readBraceComment() };
     } else if (this.isNameChar) {
-      this.token = { type: TokenType.IDENTIFIER, whiteSpace, value: this.readName() };
-      this.correctTokenTypeForNamedOperators();
+      this.token = this.correctTokenTypeForNamedOperators({ type: TokenType.IDENTIFIER, whiteSpace, value: this.readName() });
     } else if (this.isNumberConstantChar) {
       this.token = { type: TokenType.NUMBER, whiteSpace, value: this.readNumberConstant() };
     } else if (this.isNumberChar) {
@@ -175,15 +174,16 @@ export class Parser {
     return s.length === 1;
   }
 
-  correctTokenTypeForNamedOperators() {
-    if (Constants.NAMED_OPERATORS.includes(this.token!.value.toUpperCase())) {
-      this.token!.type = TokenType.OPERATOR;
-    }
-  }
-
   trySkipWhiteSpace(): string {
     const isWhiteSpace = () => !this.isAtLineEnd && Constants.WHITE_SPACE_CHARS.test(this.char);
     return isWhiteSpace() ? this.readWhile(isWhiteSpace) : '';
+  }
+
+  private correctTokenTypeForNamedOperators(token: Token): Token {
+    if (Constants.NAMED_OPERATORS.includes(token.value.toUpperCase())) {
+      token.type = TokenType.OPERATOR;
+    }
+    return token;
   }
 
   private readSingle(): string {
@@ -194,6 +194,7 @@ export class Parser {
 
   private readWhile(predicate: () => boolean, skipFirst = 0): string {
     const i = this.index + skipFirst;
+    // eslint-disable-next-line no-empty
     while (this.tryReadNextChar() && predicate()) {}
 
     return this.input.substring(i, this.index);

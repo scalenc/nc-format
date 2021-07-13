@@ -5,19 +5,19 @@ export class ParserException extends Error {
     super(`ERROR in line ${parser.line}: ${message.replace(/\{0\}/g, parser.token?.value ?? '')}`);
   }
 
-  static assert(condition: boolean, parser: Parser, message: string) {
+  static assert(condition: boolean, parser: Parser, message: string): void {
     if (!condition) {
       ParserException.fail(parser, message);
     }
   }
 
-  static expected(condition: boolean, parser: Parser, message: string) {
+  static expected(condition: boolean, parser: Parser, message: string): void {
     if (!condition) {
       ParserException.fail(parser, message);
     }
   }
 
-  static fail(parser: Parser, message: string) {
+  static fail(parser: Parser, message: string): never {
     throw new ParserException(parser, message);
   }
 }

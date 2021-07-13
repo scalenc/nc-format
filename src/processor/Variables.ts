@@ -8,12 +8,13 @@ export class Variables {
     return Object.keys(this.values);
   }
 
-  setAlias(name: string, target: string) {
+  setAlias(name: string, target: string): void {
     this.alias[name.toUpperCase()] = target.toUpperCase();
   }
 
   tryGetNumber(name: string): number | undefined {
     name = this.getAliasName(name.toUpperCase());
+    // eslint-disable-next-line security/detect-object-injection
     return this.values[name] ?? this.parent?.tryGetNumber(name);
   }
 
@@ -30,12 +31,13 @@ export class Variables {
     return this.tryGetNumber(name) ?? 0.0;
   }
 
-  setNumber(name: string, value: number) {
+  setNumber(name: string, value: number): void {
     name = this.getAliasName(name.toUpperCase());
+    // eslint-disable-next-line security/detect-object-injection
     this.values[name] = value;
   }
 
-  clearOwn() {
+  clearOwn(): void {
     this.values = {};
   }
 
@@ -43,6 +45,7 @@ export class Variables {
     if (this.parent) {
       name = this.parent.getAliasName(name);
     }
+    // eslint-disable-next-line security/detect-object-injection
     return this.alias[name] ?? name;
   }
 }

@@ -47,7 +47,7 @@ export class BlockReader {
     return new Block(line, blockNumber, labels, statements, comment);
   }
 
-  tryReadBlockNumber() {
+  tryReadBlockNumber(): number | undefined {
     if (this.statement instanceof Assignment && this.statement.variable.toUpperCase() === Constants.NUMBER_TOKEN) {
       if (this.statement.expression instanceof Number && this.statement.expression.isInteger) {
         const blockNumber = this.statement.expression.value;
@@ -101,7 +101,7 @@ export class BlockReader {
     }
   }
 
-  skipLineEnd() {
+  skipLineEnd(): void {
     if (this.parser.token) {
       if (this.parser.token.type !== TokenType.NEW_LINE) {
         throw new ParserException(this.parser, Errors.EXPECTED_LINE_END);

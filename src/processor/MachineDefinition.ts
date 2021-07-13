@@ -14,6 +14,7 @@ export class MachineDefinition {
   }
 
   getCenterAndReferenceVariables(): { centerName: string; name: string }[] {
+    // eslint-disable-next-line security/detect-object-injection
     return this.linearAxes.flatMap((a) => a.centerNames.map((centerName, i) => ({ centerName, name: a.names[i] })));
   }
 

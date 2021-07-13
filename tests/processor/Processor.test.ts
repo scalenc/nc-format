@@ -1,3 +1,4 @@
+/* eslint-disable security/detect-non-literal-fs-filename */
 import { Processor, Variables } from '../../src/processor';
 
 import { expect } from 'chai';
@@ -27,7 +28,7 @@ describe(Processor.name, () => {
 
     await fs.promises.mkdir(path.join(__dirname, '..', 'dump', 'processor'), { recursive: true });
     await fs.promises.writeFile(path.join(__dirname, '..', 'dump', 'processor', 'processed.nc.log'), protocol.join('\n'));
-    
+
     expect(protocol).lengthOf(474);
   });
 });

@@ -44,12 +44,13 @@ export class Processor implements StatementVisitor {
     this.assignmentProcessor = new AssignmentProcessor(this.state);
   }
 
-  process(ncText: NcText) {
+  process(ncText: NcText): void {
     this.callStack.push({ ncText });
     this.stop = false;
 
     const blocks = ncText.blocks;
-    for (let blockIndex = 0; blockIndex < blocks.length; ++blockIndex) {
+    for (let blockIndex = 0; blockIndex >= 0 && blockIndex < blocks.length; ++blockIndex) {
+      // eslint-disable-next-line security/detect-object-injection
       const block = blocks[blockIndex];
       if (block.statements) {
         this.callback.onEnterBlock?.(blockIndex, block, ncText);
@@ -60,6 +61,7 @@ export class Processor implements StatementVisitor {
         }
 
         if (this.motionStartVariables) {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           this.callMotion(this.motionStartVariables, this.motionEndVariables!);
         }
 
@@ -73,9 +75,6 @@ export class Processor implements StatementVisitor {
         }
 
         if (this.nextBlockIndex !== undefined) {
-          if (this.nextBlockIndex < 0) {
-            break;
-          }
           blockIndex = this.nextBlockIndex - 1; // -1 since increaesed at end of loop.
           this.nextBlockIndex = undefined;
         }
@@ -85,7 +84,7 @@ export class Processor implements StatementVisitor {
     this.callStack.pop();
   }
 
-  onDeclaration(declaration: Declaration) {
+  onDeclaration(declaration: Declaration): void {
     if (this.ignoreStack.length) {
       return;
     }
@@ -99,7 +98,7 @@ export class Processor implements StatementVisitor {
     }
   }
 
-  onAssignment(assignment: Assignment) {
+  onAssignment(assignment: Assignment): void {
     if (this.ignoreStack.length) {
       return;
     }
@@ -122,7 +121,7 @@ export class Processor implements StatementVisitor {
     }
   }
 
-  onGCode(gCode: GCode) {
+  onGCode(gCode: GCode): void {
     if (this.ignoreStack.length) {
       return;
     }
@@ -161,7 +160,7 @@ export class Processor implements StatementVisitor {
     }
   }
 
-  onGoto(gotoStatement: Goto) {
+  onGoto(gotoStatement: Goto): void {
     if (this.ignoreStack.length) {
       return;
     }
@@ -188,7 +187,7 @@ export class Processor implements StatementVisitor {
     }
   }
 
-  onInstruction(instruction: Instruction) {
+  onInstruction(instruction: Instruction): void {
     if (this.ignoreStack.length) {
       return;
     }
@@ -220,7 +219,7 @@ export class Processor implements StatementVisitor {
     }
   }
 
-  onFlowControlInstruction(instruction: FlowControlInstruction) {
+  onFlowControlInstruction(instruction: FlowControlInstruction): void {
     switch (instruction.type) {
       case FlowControlInstructionType.IF: {
         if (this.ignoreStack.length) {
@@ -255,7 +254,7 @@ export class Processor implements StatementVisitor {
     }
   }
 
-  onMCode(mCode: MCode) {
+  onMCode(mCode: MCode): void {
     if (this.ignoreStack.length) {
       return;
     }
@@ -298,6 +297,7 @@ export class Processor implements StatementVisitor {
     }
     this.motionStartVariables.setNumber(name, value);
     if (newValue !== undefined) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       this.motionEndVariables!.setNumber(name, newValue);
     }
   }
@@ -337,7 +337,7 @@ export class Processor implements StatementVisitor {
   }
 
   private trySetCenterOfFirstLinearAxisFromSignedRadius(start: Variables, end: Variables) {
-    var axes = this.state.machine.linearAxes[0];
+    const axes = this.state.machine.linearAxes[0];
     if (axes.centerNames.length >= 2) {
       Processor.trySetCenterFromSignedRadius(start, end, this.state.motionMode === MotionMode.CLOCKWISE, axes);
     }

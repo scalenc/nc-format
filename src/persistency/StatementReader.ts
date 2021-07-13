@@ -170,7 +170,7 @@ export class StatementReader {
       case Constants.ENDLOOP:
         type = FlowControlInstructionType.ENDLOOP;
         break;
-      case Constants.FOR:
+      case Constants.FOR: {
         type = FlowControlInstructionType.FOR;
         const assignment = this.readAssignmentOrInstruction();
         if (!(assignment instanceof Assignment)) {
@@ -183,6 +183,7 @@ export class StatementReader {
         const expression = this.expressionReader.readExpression();
         expressions = [new Variable(assignment.variable), assignment.expression, expression];
         break;
+      }
       case Constants.ENDFOR:
         type = FlowControlInstructionType.ENDFOR;
         break;

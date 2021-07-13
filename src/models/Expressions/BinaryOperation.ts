@@ -35,7 +35,7 @@ export class BinaryOperation implements Expression {
     public rightExpression: Expression
   ) {}
 
-  visit(visitor: ExpressionVisitor) {
+  visit(visitor: ExpressionVisitor): void {
     visitor.onBinaryOperation(this);
   }
 }

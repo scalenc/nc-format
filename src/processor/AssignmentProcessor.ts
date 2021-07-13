@@ -11,7 +11,7 @@ export class AssignmentProcessor {
 
   constructor(private state: State) {}
 
-  setMissingCenterVariables(variables: Variables) {
+  setMissingCenterVariables(variables: Variables): void {
     if (this.state.motionMode === MotionMode.CLOCKWISE || this.state.motionMode === MotionMode.COUNTER_CLOCKWISE) {
       this.state.machine.getCenterAndReferenceVariables().forEach(({ name, centerName }) => {
         if (!variables.hasNumber(centerName)) {
@@ -24,7 +24,7 @@ export class AssignmentProcessor {
     }
   }
 
-  process(assignment: Assignment) {
+  process(assignment: Assignment): void {
     this.variable = assignment.variable;
     let absolute = this.state.absolute ? this.state.machine.isAbsoluteAssignable(this.variable) : !this.state.machine.isRelativeAssignable(this.variable);
     let expression = assignment.expression;
@@ -43,7 +43,7 @@ export class AssignmentProcessor {
     this.value += this.state.metric ? value : this.state.machine.inchToMillimeter(this.variable, value);
   }
 
-  apply() {
+  apply(): void {
     this.state.variables.setNumber(this.variable, this.value);
   }
 }

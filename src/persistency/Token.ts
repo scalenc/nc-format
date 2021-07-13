@@ -1,4 +1,4 @@
-import { Constants } from "./Constants";
+import { Constants } from './Constants';
 
 export enum TokenType {
   NEW_LINE,
@@ -95,6 +95,7 @@ export function tryGetNumberAsInteger(token: Token | undefined): number | undefi
       let value = 0;
       for (let i = 1; i < token.value.length; ++i) {
         value <<= 1;
+        // eslint-disable-next-line security/detect-object-injection
         switch (token.value[i]) {
           case '0':
             break;
@@ -109,7 +110,7 @@ export function tryGetNumberAsInteger(token: Token | undefined): number | undefi
       }
       return value;
     }
-    
+
     default: {
       const number = Number.parseInt(token.value);
       return Number.isNaN(number) ? undefined : number;

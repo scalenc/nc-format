@@ -81,6 +81,7 @@ export class DeclarationReader {
   }
 
   private readVariable(): VariableDeclaration {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const name = this.parser.token!.value;
     const fieldLengths = this.parser.tryRead() && this.isFieldBeginToken(this.parser.token) ? this.readFieldLengths() : undefined;
     const initExpression = isAssignmentOperator(this.parser.token) ? this.readInitExpression() : undefined;

@@ -12,11 +12,11 @@ export class Transformation {
 
   constructor(private machine: MachineDefinition) {}
 
-  applyToVars(variables: Variables) {
+  applyToVars(variables: Variables): void {
     this.applyToAllLinearAxes(variables, this.applyToPoint.bind(this));
   }
 
-  applyReverseToVars(variables: Variables) {
+  applyReverseToVars(variables: Variables): void {
     this.applyToAllLinearAxes(variables, this.applyReverseToPoint.bind(this));
   }
 

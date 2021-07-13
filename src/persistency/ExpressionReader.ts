@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { BinaryOperation, Expression } from '../models/Expressions';
 import { Errors } from './Errors';
 import { Parser } from './Parser';
@@ -281,11 +282,11 @@ export class ExpressionReader {
     return token?.type === TokenType.STRING;
   }
 
-  assertNotLineOrFileEnd() {
+  assertNotLineOrFileEnd(): void {
     ParserException.assert(!this.isLineOrFileEnd(this.parser.token), this.parser, Errors.UNEXPECTED_LINE_OR_FILE_END);
   }
 
-  firstHasLowerOrEqualPriority(operation1: Expressions.BinaryOperator, operation2: Expressions.BinaryOperator) {
+  firstHasLowerOrEqualPriority(operation1: Expressions.BinaryOperator, operation2: Expressions.BinaryOperator): boolean {
     const priority1 = this.getPriority(operation1);
     const priority2 = this.getPriority(operation2);
     return priority1 <= priority2;
