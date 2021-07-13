@@ -1,6 +1,6 @@
 {
   "name": "@scalenc/nc-format",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Library for handling TRUMPF NC file format.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
