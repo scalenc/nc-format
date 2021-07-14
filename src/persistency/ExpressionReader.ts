@@ -43,9 +43,9 @@ export class ExpressionReader {
     let operant = this.readOperant();
 
     let binaryOperator = this.tryReadBinaryOperator();
-    if (binaryOperator) {
+    if (binaryOperator !== undefined) {
       const stack: BinaryOperation[] = [];
-      for (; binaryOperator; binaryOperator = this.tryReadBinaryOperator()) {
+      for (; binaryOperator !== undefined; binaryOperator = this.tryReadBinaryOperator()) {
         while (stack.length > 0 && this.firstHasLowerOrEqualPriority(binaryOperator, stack[stack.length - 1].operator)) {
           stack.pop();
         }
@@ -69,7 +69,7 @@ export class ExpressionReader {
 
   private readOperant(): Expression {
     const unaryOperator = this.tryReadUnaryOperator();
-    if (unaryOperator) {
+    if (unaryOperator !== undefined) {
       const unaryOperation = new Expressions.UnaryOperation(unaryOperator, this.readOperant());
       return this.tryMergeNegativeNumber(unaryOperation);
     }
@@ -195,7 +195,7 @@ export class ExpressionReader {
       return undefined;
     }
     const binaryOperator = BINARY_OPERATORS[this.parser.token!.value.toUpperCase()];
-    ParserException.expected(!!binaryOperator, this.parser, Errors.EXPECTED_BINARY_OPERATOR);
+    ParserException.expected(binaryOperator !== undefined, this.parser, Errors.EXPECTED_BINARY_OPERATOR);
 
     this.parser.tryRead();
     return binaryOperator;
@@ -210,7 +210,7 @@ export class ExpressionReader {
       return undefined;
     }
     const unaryOperator = UNARY_OPERATORS[this.parser.token!.value.toUpperCase()];
-    ParserException.expected(!!unaryOperator, this.parser, Errors.EXPECTED_OPERANT);
+    ParserException.expected(unaryOperator !== undefined, this.parser, Errors.EXPECTED_OPERANT);
     this.parser.tryRead();
     return unaryOperator;
   }
