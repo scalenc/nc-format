@@ -205,12 +205,14 @@ export class ExpressionReader {
     if (!this.isOperatorToken(this.parser.token)) {
       return undefined;
     }
-    if (this.parser.token!.value != Constants.PLUS_SIGN) {
-      const unaryOperator = UNARY_OPERATORS[this.parser.token!.value.toUpperCase()];
-      ParserException.expected(!!unaryOperator, this.parser, Errors.EXPECTED_OPERANT);
-      return unaryOperator;
+    if (this.parser.token!.value === Constants.PLUS_SIGN) {
+      this.parser.tryRead(); // Just skip operator.
+      return undefined;
     }
+    const unaryOperator = UNARY_OPERATORS[this.parser.token!.value.toUpperCase()];
+    ParserException.expected(!!unaryOperator, this.parser, Errors.EXPECTED_OPERANT);
     this.parser.tryRead();
+    return unaryOperator;
   }
 
   private tryMergeNegativeNumber(unaryOperation: Expressions.UnaryOperation): Expression {

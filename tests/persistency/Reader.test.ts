@@ -5,12 +5,17 @@ import path from 'path';
 import { Reader } from '../../src';
 
 describe(Reader.name, () => {
-  it('should parse NC text', async () => {
-    const content = await fs.promises.readFile(path.join(__dirname, '..', 'data', 'nc.txt'), 'utf-8');
-    const nc = Reader.readFromString(content);
-    expect(nc.blocks).lengthOf(254);
+  [
+    { filename: '01.nc.txt', blocksCount: 254 },
+    { filename: '02.nc.txt', blocksCount: 89 },
+  ].forEach(({ filename, blocksCount }) => {
+    it(`should parse NC text from '${filename}'`, async () => {
+      const content = await fs.promises.readFile(path.join(__dirname, '..', 'data', filename), 'utf-8');
+      const nc = Reader.readFromString(content);
+      expect(nc.blocks).lengthOf(blocksCount);
 
-    await fs.promises.mkdir(path.join(__dirname, '..', 'dump'), { recursive: true });
-    await fs.promises.writeFile(path.join(__dirname, '..', 'dump', 'nc.txt.json'), JSON.stringify(nc));
+      await fs.promises.mkdir(path.join(__dirname, '..', 'dump', 'persistency'), { recursive: true });
+      await fs.promises.writeFile(path.join(__dirname, '..', 'dump', 'persistency', `${filename}.json`), JSON.stringify(nc));
+    });
   });
 });

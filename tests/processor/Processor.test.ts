@@ -7,8 +7,8 @@ import path from 'path';
 import { GCode, Instruction, MCode, Reader } from '../../src';
 
 describe(Processor.name, () => {
-  it('should parse NC text', async () => {
-    const content = await fs.promises.readFile(path.join(__dirname, '..', 'data', 'nc.txt'), 'utf-8');
+  it('should process NC text', async () => {
+    const content = await fs.promises.readFile(path.join(__dirname, '..', 'data', '01.nc.txt'), 'utf-8');
     const nc = Reader.readFromString(content);
 
     const protocol: string[] = [];
