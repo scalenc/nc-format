@@ -3,13 +3,13 @@ import { State } from './State';
 import { Variables } from './Variables';
 
 export interface ProcessCallback {
-  onEnterBlock?(blockIndex: number, block: Block, ncText: NcText): void;
-  onInstruction?(instruction: Instruction): void;
-  onUnhandledMCode?(mCode: MCode): void;
-  onUnhandledGCode?(gCode: GCode): void;
-  onWait?(waitDelay?: number): void;
+  onEnterBlock?(blockIndex: number, block: Block, ncText: NcText, state: State): void;
+  onInstruction?(instruction: Instruction, state: State): void;
+  onUnhandledMCode?(mCode: MCode, state: State): void;
+  onUnhandledGCode?(gCode: GCode, state: State): void;
+  onWait?(waitDelay: number | undefined, state: State): void;
   onMotion?(start: Variables, end: Variables, state: State): void;
-  onEnterSubprogram?(subProgramName: string, subProgram: NcText): void;
-  onLeaveSubprogram?(subProgramName: string, subProgram: NcText): void;
-  onFinish?(): void;
+  onEnterSubprogram?(subProgramName: string, subProgram: NcText, state: State): void;
+  onLeaveSubprogram?(subProgramName: string, subProgram: NcText, state: State): void;
+  onFinish?(state: State): void;
 }
