@@ -53,7 +53,7 @@ export class Processor implements StatementVisitor {
       // eslint-disable-next-line security/detect-object-injection
       const block = blocks[blockIndex];
       if (block.statements) {
-        this.callback.onEnterBlock?.(blockIndex, block, ncText);
+        this.callback.onEnterBlock?.(blockIndex, block, ncText, this.state);
         block.statements?.forEach((statement) => !this.stop && statement.visit(this));
 
         if (this.wait) {
@@ -155,7 +155,7 @@ export class Processor implements StatementVisitor {
         this.state.absolute = false;
         break;
       default:
-        this.callback.onUnhandledGCode?.(gCode);
+        this.callback.onUnhandledGCode?.(gCode, this.state);
         break;
     }
   }
@@ -208,13 +208,13 @@ export class Processor implements StatementVisitor {
           throw new ProcessorException(Errors.UNEXPECTED_ARGS_IN_SUBPROGRAM_CALL.replace(/\{0\}/g, instruction.name));
         }
 
-        this.callback.onEnterSubprogram?.(instruction.name, subProgram);
+        this.callback.onEnterSubprogram?.(instruction.name, subProgram, this.state);
         this.process(subProgram);
         if (!this.stop) {
-          this.callback.onLeaveSubprogram?.(instruction.name, subProgram);
+          this.callback.onLeaveSubprogram?.(instruction.name, subProgram, this.state);
         }
       } else {
-        this.callback.onInstruction?.(instruction);
+        this.callback.onInstruction?.(instruction, this.state);
       }
     }
   }
@@ -263,7 +263,7 @@ export class Processor implements StatementVisitor {
       case 2:
       case 30:
         this.stop = true;
-        this.callback.onFinish?.();
+        this.callback.onFinish?.(this.state);
         break;
 
       case 17:
@@ -271,7 +271,7 @@ export class Processor implements StatementVisitor {
         break;
 
       default:
-        this.callback.onUnhandledMCode?.(mCode);
+        this.callback.onUnhandledMCode?.(mCode, this.state);
         break;
     }
   }
@@ -307,7 +307,7 @@ export class Processor implements StatementVisitor {
     this.waitDelay = undefined;
     this.wait = false;
 
-    this.callback.onWait?.(waitDelay);
+    this.callback.onWait?.(waitDelay, this.state);
   }
 
   private callMotion(start: Variables, end: Variables) {
