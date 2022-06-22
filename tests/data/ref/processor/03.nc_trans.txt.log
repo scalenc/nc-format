@@ -1,0 +1,18 @@
+onEnterBlock 0
+onEnterBlock 1
+onEnterBlock 2
+onMotion: (0 0) -> (100 0)
+onEnterBlock 3
+onEnterBlock 4
+onMotion: (100 0) -> (200 0)
+onEnterBlock 5
+onEnterBlock 6
+onMotion: (200 0) -> (300 0)
+onEnterBlock 7
+onEnterBlock 8
+onMotion: (300 0) -> (200 0)
+onEnterBlock 9
+onEnterBlock 10
+onMotion: (200 0) -> (300 0)
+onEnterBlock 11
+onFinish

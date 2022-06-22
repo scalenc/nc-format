@@ -1,0 +1,474 @@
+onEnterBlock 0
+onInstruction: MSG
+onEnterBlock 1
+onInstruction: MSG
+onEnterBlock 2
+onInstruction: MSG
+onEnterBlock 3
+onEnterBlock 4
+onEnterBlock 5
+onEnterBlock 6
+onEnterBlock 7
+onEnterBlock 8
+onEnterBlock 9
+onEnterBlock 10
+onEnterBlock 11
+onEnterBlock 12
+onEnterBlock 13
+onEnterBlock 14
+onEnterBlock 15
+onEnterBlock 16
+onEnterBlock 17
+onEnterBlock 18
+onEnterBlock 19
+onInstruction: MSG
+onEnterBlock 20
+onInstruction: MSG
+onEnterBlock 21
+onInstruction: MSG
+onEnterBlock 22
+onInstruction: TRAILON
+onEnterBlock 23
+onEnterBlock 24
+onEnterBlock 25
+onInstruction: TC_SUCTION_OFF
+onEnterBlock 26
+onInstruction: TC_CLAMP_CYC
+onEnterBlock 27
+onInstruction: TC_TOOL_LUBE_ON
+onEnterBlock 28
+onInstruction: TC_TECHNO_MODE
+onEnterBlock 29
+onInstruction: MSG
+onEnterBlock 30
+onInstruction: MSG
+onEnterBlock 31
+onInstruction: TC_SHEET_TECH
+onEnterBlock 32
+onInstruction: TC_POS_LEVEL
+onEnterBlock 33
+onInstruction: TC_POS_LASERDIE
+onEnterBlock 34
+onInstruction: TC_SHEET_LOAD
+onEnterBlock 35
+onEnterBlock 36
+onEnterBlock 37
+onEnterBlock 38
+onEnterBlock 39
+onEnterBlock 40
+onInstruction: MSG
+onEnterBlock 41
+onInstruction: TC_TOOL_LOAD
+onEnterBlock 42
+onInstruction: PUNCH_ON
+onEnterBlock 43
+onMotion: (0 0) -> (498.375 82.325)
+onEnterBlock 44
+onInstruction: PUNCH_OFF
+onEnterBlock 45
+onEnterBlock 46
+onInstruction: MSG
+onEnterBlock 47
+onInstruction: TC_TOOL_LOAD
+onEnterBlock 48
+onInstruction: PUNCH_ON
+onEnterBlock 49
+onMotion: (498.375 82.325) -> (527.8 517.4)
+onEnterBlock 50
+onMotion: (527.8 517.4) -> (587.8 517.4)
+onEnterBlock 51
+onMotion: (587.8 517.4) -> (587.8 463.114)
+onEnterBlock 52
+onMotion: (587.8 463.114) -> (527.8 463.114)
+onEnterBlock 53
+onMotion: (527.8 463.114) -> (527.8 408.829)
+onEnterBlock 54
+onMotion: (527.8 408.829) -> (587.8 408.829)
+onEnterBlock 55
+onMotion: (587.8 408.829) -> (587.8 354.543)
+onEnterBlock 56
+onMotion: (587.8 354.543) -> (527.8 354.543)
+onEnterBlock 57
+onMotion: (527.8 354.543) -> (527.8 300.257)
+onEnterBlock 58
+onMotion: (527.8 300.257) -> (587.8 300.257)
+onEnterBlock 59
+onMotion: (587.8 300.257) -> (587.8 245.971)
+onEnterBlock 60
+onMotion: (587.8 245.971) -> (527.8 245.971)
+onEnterBlock 61
+onMotion: (527.8 245.971) -> (527.8 191.686)
+onEnterBlock 62
+onMotion: (527.8 191.686) -> (587.8 191.686)
+onEnterBlock 63
+onMotion: (587.8 191.686) -> (587.8 137.4)
+onEnterBlock 64
+onMotion: (587.8 137.4) -> (527.8 137.4)
+onEnterBlock 65
+onInstruction: TC_PREPARE_LASER_ON
+onEnterBlock 66
+onEnterBlock 67
+onInstruction: PUNCH_OFF
+onEnterBlock 68
+onInstruction: TC_TECHNO_MODE
+onEnterBlock 69
+onInstruction: TC_POS_LEVEL
+onEnterBlock 70
+onEnterBlock 71
+onEnterBlock 72
+onInstruction: TC_POS_HEAD
+onEnterBlock 73
+onMotion: (527.8 137.4) -> (497.075 82.325)
+onEnterBlock 74
+onInstruction: TC_LASER_ON
+onEnterBlock 75
+onMotion: (497.075 82.325) -> (493.675 82.325)
+onEnterBlock 76
+onInstruction: TC_LASER_ON
+onEnterBlock 77
+onMotion: (493.675 82.325) -> (492.875 82.325)
+onEnterBlock 78
+onMotion: (492.875 82.325) -> (478.345 82.325)
+onEnterBlock 79
+onMotion: (478.345 82.325) -> (477.848 81.877)
+onEnterBlock 80
+onMotion: (477.848 81.877) -> (467.725 82.4)
+onEnterBlock 81
+onMotion: (467.725 82.4) -> (467.725 151.975)
+onEnterBlock 82
+onMotion: (467.725 151.975) -> (468.225 152.475)
+onEnterBlock 83
+onMotion: (468.225 152.475) -> (502.225 152.475)
+onEnterBlock 84
+onMotion: (502.225 152.475) -> (502.725 152.975)
+onEnterBlock 85
+onMotion: (502.725 152.975) -> (502.725 220.762)
+onEnterBlock 86
+onMotion: (502.725 220.762) -> (502.225 221.262)
+onEnterBlock 87
+onMotion: (502.225 221.262) -> (468.225 221.262)
+onEnterBlock 88
+onMotion: (468.225 221.262) -> (467.725 221.762)
+onEnterBlock 89
+onMotion: (467.725 221.762) -> (467.725 433.038)
+onEnterBlock 90
+onMotion: (467.725 433.038) -> (468.225 433.538)
+onEnterBlock 91
+onMotion: (468.225 433.538) -> (502.225 433.538)
+onEnterBlock 92
+onMotion: (502.225 433.538) -> (502.725 434.038)
+onEnterBlock 93
+onMotion: (502.725 434.038) -> (502.725 501.825)
+onEnterBlock 94
+onMotion: (502.725 501.825) -> (502.225 502.325)
+onEnterBlock 95
+onMotion: (502.225 502.325) -> (468.225 502.325)
+onEnterBlock 96
+onMotion: (468.225 502.325) -> (467.725 502.825)
+onEnterBlock 97
+onMotion: (467.725 502.825) -> (467.725 572.4)
+onEnterBlock 98
+onMotion: (467.725 572.4) -> (472.8 577.475)
+onEnterBlock 99
+onMotion: (472.8 577.475) -> (642.8 577.475)
+onEnterBlock 100
+onMotion: (642.8 577.475) -> (647.875 572.4)
+onEnterBlock 101
+onMotion: (647.875 572.4) -> (647.875 502.825)
+onEnterBlock 102
+onMotion: (647.875 502.825) -> (647.375 502.325)
+onEnterBlock 103
+onMotion: (647.375 502.325) -> (613.375 502.325)
+onEnterBlock 104
+onMotion: (613.375 502.325) -> (612.875 501.825)
+onEnterBlock 105
+onMotion: (612.875 501.825) -> (612.875 434.038)
+onEnterBlock 106
+onMotion: (612.875 434.038) -> (613.375 433.538)
+onEnterBlock 107
+onMotion: (613.375 433.538) -> (647.375 433.538)
+onEnterBlock 108
+onMotion: (647.375 433.538) -> (647.875 433.038)
+onEnterBlock 109
+onMotion: (647.875 433.038) -> (647.875 221.762)
+onEnterBlock 110
+onMotion: (647.875 221.762) -> (647.375 221.262)
+onEnterBlock 111
+onMotion: (647.375 221.262) -> (613.375 221.262)
+onEnterBlock 112
+onMotion: (613.375 221.262) -> (612.875 220.762)
+onEnterBlock 113
+onMotion: (612.875 220.762) -> (612.875 152.975)
+onEnterBlock 114
+onMotion: (612.875 152.975) -> (613.375 152.475)
+onEnterBlock 115
+onMotion: (613.375 152.475) -> (647.375 152.475)
+onEnterBlock 116
+onMotion: (647.375 152.475) -> (647.875 151.975)
+onEnterBlock 117
+onMotion: (647.875 151.975) -> (647.875 82.4)
+onEnterBlock 118
+onMotion: (647.875 82.4) -> (637.752 81.877)
+onEnterBlock 119
+onMotion: (637.752 81.877) -> (637.255 82.325)
+onEnterBlock 120
+onMotion: (637.255 82.325) -> (623.225 82.325)
+onEnterBlock 121
+onMotion: (623.225 82.325) -> (622.725 82.825)
+onEnterBlock 122
+onMotion: (622.725 82.825) -> (622.725 96.825)
+onEnterBlock 123
+onMotion: (622.725 96.825) -> (622.225 97.325)
+onEnterBlock 124
+onMotion: (622.225 97.325) -> (603.225 97.325)
+onEnterBlock 125
+onMotion: (603.225 97.325) -> (602.725 97.825)
+onEnterBlock 126
+onMotion: (602.725 97.825) -> (602.725 116.825)
+onEnterBlock 127
+onMotion: (602.725 116.825) -> (602.225 117.325)
+onEnterBlock 128
+onMotion: (602.225 117.325) -> (513.375 117.325)
+onEnterBlock 129
+onMotion: (513.375 117.325) -> (512.875 116.825)
+onEnterBlock 130
+onMotion: (512.875 116.825) -> (512.875 97.825)
+onEnterBlock 131
+onMotion: (512.875 97.825) -> (512.375 97.325)
+onEnterBlock 132
+onMotion: (512.375 97.325) -> (493.375 97.325)
+onEnterBlock 133
+onMotion: (493.375 97.325) -> (492.875 96.825)
+onEnterBlock 134
+onMotion: (492.875 96.825) -> (492.875 82.325)
+onEnterBlock 135
+onInstruction: TC_LASER_OFF
+onEnterBlock 136
+onInstruction: TC_UNLOAD
+onEnterBlock 137
+onInstruction: TC_PREPARE_UNLOAD
+onEnterBlock 138
+onEnterBlock 139
+onInstruction: TC_LASER_OFF
+onEnterBlock 140
+onInstruction: TC_TECHNO_MODE
+onEnterBlock 141
+onEnterBlock 142
+onInstruction: MSG
+onEnterBlock 143
+onInstruction: TC_TOOL_LOAD
+onEnterBlock 144
+onEnterBlock 145
+onUnhandledGCode: 53
+onMotion: (492.875 82.325) -> (1265 86)
+onEnterBlock 146
+onInstruction: TC_SHEET_REPOSIT
+onEnterBlock 147
+onEnterBlock 148
+onInstruction: MSG
+onEnterBlock 149
+onInstruction: TC_TOOL_LOAD
+onEnterBlock 150
+onInstruction: PUNCH_ON
+onEnterBlock 151
+onMotion: (1265 86) -> (358 72.968)
+onEnterBlock 152
+onInstruction: PUNCH_OFF
+onEnterBlock 153
+onEnterBlock 154
+onInstruction: MSG
+onEnterBlock 155
+onInstruction: TC_TOOL_LOAD
+onEnterBlock 156
+onInstruction: PUNCH_ON
+onEnterBlock 157
+onMotion: (358 72.968) -> (327.75 518.4)
+onEnterBlock 158
+onMotion: (327.75 518.4) -> (387.75 518.4)
+onEnterBlock 159
+onMotion: (387.75 518.4) -> (387.75 464.114)
+onEnterBlock 160
+onMotion: (387.75 464.114) -> (327.75 464.114)
+onEnterBlock 161
+onMotion: (327.75 464.114) -> (327.75 409.829)
+onEnterBlock 162
+onMotion: (327.75 409.829) -> (387.75 409.829)
+onEnterBlock 163
+onMotion: (387.75 409.829) -> (387.75 355.543)
+onEnterBlock 164
+onMotion: (387.75 355.543) -> (327.75 355.543)
+onEnterBlock 165
+onMotion: (327.75 355.543) -> (327.75 301.257)
+onEnterBlock 166
+onMotion: (327.75 301.257) -> (387.75 301.257)
+onEnterBlock 167
+onMotion: (387.75 301.257) -> (387.75 246.971)
+onEnterBlock 168
+onMotion: (387.75 246.971) -> (327.75 246.971)
+onEnterBlock 169
+onMotion: (327.75 246.971) -> (327.75 192.686)
+onEnterBlock 170
+onMotion: (327.75 192.686) -> (387.75 192.686)
+onEnterBlock 171
+onMotion: (387.75 192.686) -> (387.75 138.4)
+onEnterBlock 172
+onMotion: (387.75 138.4) -> (327.75 138.4)
+onEnterBlock 173
+onInstruction: TC_PREPARE_LASER_ON
+onEnterBlock 174
+onEnterBlock 175
+onInstruction: PUNCH_OFF
+onEnterBlock 176
+onInstruction: TC_TECHNO_MODE
+onEnterBlock 177
+onInstruction: TC_POS_LEVEL
+onEnterBlock 178
+onEnterBlock 179
+onEnterBlock 180
+onInstruction: TC_POS_HEAD
+onEnterBlock 181
+onMotion: (327.75 138.4) -> (358 74.268)
+onEnterBlock 182
+onInstruction: TC_LASER_ON
+onEnterBlock 183
+onMotion: (358 74.268) -> (358 77.354)
+onEnterBlock 184
+onInstruction: TC_LASER_ON
+onEnterBlock 185
+onMotion: (358 77.354) -> (358 78.075)
+onEnterBlock 186
+onMotion: (358 78.075) -> (357.75 78.325)
+onEnterBlock 187
+onMotion: (357.75 78.325) -> (272.75 78.325)
+onEnterBlock 188
+onMotion: (272.75 78.325) -> (267.675 83.4)
+onEnterBlock 189
+onMotion: (267.675 83.4) -> (267.675 152.975)
+onEnterBlock 190
+onMotion: (267.675 152.975) -> (268.175 153.475)
+onEnterBlock 191
+onMotion: (268.175 153.475) -> (302.175 153.475)
+onEnterBlock 192
+onMotion: (302.175 153.475) -> (302.675 153.975)
+onEnterBlock 193
+onMotion: (302.675 153.975) -> (302.675 221.762)
+onEnterBlock 194
+onMotion: (302.675 221.762) -> (302.175 222.262)
+onEnterBlock 195
+onMotion: (302.175 222.262) -> (268.175 222.262)
+onEnterBlock 196
+onMotion: (268.175 222.262) -> (267.675 222.762)
+onEnterBlock 197
+onMotion: (267.675 222.762) -> (267.675 434.038)
+onEnterBlock 198
+onMotion: (267.675 434.038) -> (268.175 434.538)
+onEnterBlock 199
+onMotion: (268.175 434.538) -> (302.175 434.538)
+onEnterBlock 200
+onMotion: (302.175 434.538) -> (302.675 435.038)
+onEnterBlock 201
+onMotion: (302.675 435.038) -> (302.675 502.825)
+onEnterBlock 202
+onMotion: (302.675 502.825) -> (302.175 503.325)
+onEnterBlock 203
+onMotion: (302.175 503.325) -> (268.175 503.325)
+onEnterBlock 204
+onMotion: (268.175 503.325) -> (267.675 503.825)
+onEnterBlock 205
+onMotion: (267.675 503.825) -> (267.675 573.4)
+onEnterBlock 206
+onMotion: (267.675 573.4) -> (277.798 573.923)
+onEnterBlock 207
+onMotion: (277.798 573.923) -> (278.295 573.475)
+onEnterBlock 208
+onMotion: (278.295 573.475) -> (292.325 573.475)
+onEnterBlock 209
+onMotion: (292.325 573.475) -> (292.825 572.975)
+onEnterBlock 210
+onMotion: (292.825 572.975) -> (292.825 558.975)
+onEnterBlock 211
+onMotion: (292.825 558.975) -> (293.325 558.475)
+onEnterBlock 212
+onMotion: (293.325 558.475) -> (312.325 558.475)
+onEnterBlock 213
+onMotion: (312.325 558.475) -> (312.825 557.975)
+onEnterBlock 214
+onMotion: (312.825 557.975) -> (312.825 538.975)
+onEnterBlock 215
+onMotion: (312.825 538.975) -> (313.325 538.475)
+onEnterBlock 216
+onMotion: (313.325 538.475) -> (402.175 538.475)
+onEnterBlock 217
+onMotion: (402.175 538.475) -> (402.675 538.975)
+onEnterBlock 218
+onMotion: (402.675 538.975) -> (402.675 557.975)
+onEnterBlock 219
+onMotion: (402.675 557.975) -> (403.175 558.475)
+onEnterBlock 220
+onMotion: (403.175 558.475) -> (422.175 558.475)
+onEnterBlock 221
+onMotion: (422.175 558.475) -> (422.675 558.975)
+onEnterBlock 222
+onMotion: (422.675 558.975) -> (422.675 572.975)
+onEnterBlock 223
+onMotion: (422.675 572.975) -> (423.175 573.475)
+onEnterBlock 224
+onMotion: (423.175 573.475) -> (437.205 573.475)
+onEnterBlock 225
+onMotion: (437.205 573.475) -> (437.702 573.923)
+onEnterBlock 226
+onMotion: (437.702 573.923) -> (447.825 573.4)
+onEnterBlock 227
+onMotion: (447.825 573.4) -> (447.825 503.825)
+onEnterBlock 228
+onMotion: (447.825 503.825) -> (447.325 503.325)
+onEnterBlock 229
+onMotion: (447.325 503.325) -> (413.325 503.325)
+onEnterBlock 230
+onMotion: (413.325 503.325) -> (412.825 502.825)
+onEnterBlock 231
+onMotion: (412.825 502.825) -> (412.825 435.038)
+onEnterBlock 232
+onMotion: (412.825 435.038) -> (413.325 434.538)
+onEnterBlock 233
+onMotion: (413.325 434.538) -> (447.325 434.538)
+onEnterBlock 234
+onMotion: (447.325 434.538) -> (447.825 434.038)
+onEnterBlock 235
+onMotion: (447.825 434.038) -> (447.825 222.762)
+onEnterBlock 236
+onMotion: (447.825 222.762) -> (447.325 222.262)
+onEnterBlock 237
+onMotion: (447.325 222.262) -> (413.325 222.262)
+onEnterBlock 238
+onMotion: (413.325 222.262) -> (412.825 221.762)
+onEnterBlock 239
+onMotion: (412.825 221.762) -> (412.825 153.975)
+onEnterBlock 240
+onMotion: (412.825 153.975) -> (413.325 153.475)
+onEnterBlock 241
+onMotion: (413.325 153.475) -> (447.325 153.475)
+onEnterBlock 242
+onMotion: (447.325 153.475) -> (447.825 152.975)
+onEnterBlock 243
+onMotion: (447.825 152.975) -> (447.825 83.4)
+onEnterBlock 244
+onMotion: (447.825 83.4) -> (442.75 78.325)
+onEnterBlock 245
+onMotion: (442.75 78.325) -> (357.75 78.325)
+onEnterBlock 246
+onInstruction: TC_LASER_OFF
+onEnterBlock 247
+onInstruction: TC_UNLOAD
+onEnterBlock 248
+onInstruction: TC_LASER_OFF
+onEnterBlock 249
+onMotion: (357.75 78.325) -> (357.75 190)
+onEnterBlock 250
+onInstruction: TC_TECHNO_MODE
+onEnterBlock 251
+onInstruction: TC_SUCTION_OFF
+onEnterBlock 252
+onInstruction: TC_UNLOAD
+onEnterBlock 253
+onFinish
