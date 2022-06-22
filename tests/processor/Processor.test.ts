@@ -7,21 +7,7 @@ import path from 'path';
 import { GCode, Instruction, MCode, Reader } from '../../src';
 
 describe(Processor.name, () => {
-  it('should process NC text', async () => {
-    const content = await fs.promises.readFile(path.join(__dirname, '..', 'data', '01.nc.txt'), 'utf-8');
-    const nc = Reader.readFromString(content);
-
-    const protocol: string[] = [];
-    const processor = makeLogProcessor(protocol);
-    processor.process(nc);
-
-    await fs.promises.mkdir(path.join(__dirname, '..', 'dump', 'processor'), { recursive: true });
-    await fs.promises.writeFile(path.join(__dirname, '..', 'dump', 'processor', 'processed.nc.log'), protocol.join('\n'));
-
-    expect(protocol).lengthOf(474);
-  });
-
-  ['03.nc_trans.txt'].forEach((name) =>
+  ['01.nc.txt', '03.nc_trans.txt'].forEach((name) =>
     it(`should process NC text ${name}`, async () => {
       const content = await fs.promises.readFile(path.join(__dirname, '..', 'data', name), 'utf-8');
       const nc = Reader.readFromString(content);
