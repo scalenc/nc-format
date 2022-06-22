@@ -209,6 +209,7 @@ export class Processor implements StatementVisitor {
       }
       const transformState = new State(this.state.machine);
       transformState.variables = this.state.transformation.variables;
+      transformState.absolute = false;
       transformState.metric = this.state.metric;
       this.transformationSetter = new AssignmentProcessor(transformState);
     } else {
