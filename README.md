@@ -1,53 +1,80 @@
-# nc-format
+# NC format library
 
-This is a typescript library to read TRUMPF NC.
+[![License](https://img.shields.io/badge/license-BSD3-green)](https://github.com/scalenc/nc-format)
+[![NPM version](https://img.shields.io/npm/v/@scalenc/nc-format)](https://www.npmjs.com/package/@scalenc/nc-format)
+
+This is a typescript library to read and write TRUMPF NC.
 
 It comes with a plain class model of the NC text and a persistency layer to read this model from a string.
 
 Additionally, it provides a processor to interpret TRUMPF NC text.
 
-## Usage
+## Installation
 
-This package is deployed to the gitlab npm package repository. You need to configure this repository within your project.
-Therefore, create a local `.npmrc` file (to be checked in - also good for `yarn`):
-
+```sh
+npm install nc-format
+yarn add nc-format
+pnpm add nc-format
 ```
-@scalenc:registry=https://gitlab.com/api/v4/packages/npm/
+
+## Examples
+
+Sample usage to read NC code
+
+```typescript
+import { Reader } from '@scalenc/nc-format';
+
+const nc = Reader.readFromString(`N500G01X527.8Y517.4C1=DC(0)`);
 ```
 
-You need authentication to the gitlab npm package repository. Therefore, you need to create a personal access token (see https://gitlab.com/-/profile/personal_access_tokens).
-Then, create a `.npmrc` file in your home directory (do not check in):
+Sample usage to construct and write NC code
 
+```typescript
+import { NcBuilder, Writer } from '@scalenc/nc-format';
+
+const nc = NcBuilder.block((b) => b.linear.X(10).Y(20)).block((b) => b.clockwise.X(30).I(10).J(10)).text;
+const text = Writer.toString(nc);
 ```
-//gitlab.com/api/v4/packages/npm/:_authToken=<your personal access token>
-//gitlab.com/api/v4/projects/:_authToken=<your personal access token>
+
+Sample for NC interpretation
+
+```typescript
+import { Processor } from '@scalenc/nc-format';
+
+const processor = new Processor({
+  onEnterBlock: (blockIndex: number) => console.log(`onEnterBlock ${blockIndex}`),
+  onInstruction: (instruction: Instruction) => console.log(`onInstruction: ${instruction.name}`),
+  onUnhandledMCode: (mCode: MCode) => console.log(`onUnhandledMCode: ${mCode.id}`),
+  onUnhandledGCode: (gCode: GCode) => console.log(`onUnhandledGCode: ${gCode.id}`),
+  onWait: (waitDelay?: number) => console.log(`onWait: ${waitDelay}`),
+  onMotion: (start: Variables, end: Variables) => {
+    const x1 = start.tryGetNumber('X');
+    const y1 = start.tryGetNumber('Y');
+    const x2 = end.tryGetNumber('X');
+    const y2 = end.tryGetNumber('Y');
+    console.log(`onMotion: (${x1} ${y1}) -> (${x2} ${y2})`);
+  },
+  onEnterSubprogram: (subProgramName: string) => console.log(`onEnterSubprogram: ${subProgramName}`),
+  onLeaveSubprogram: (subProgramName: string) => console.log(`onLeaveSubprogram: ${subProgramName}`),
+  onFinish: () => console.log(`onFinish`),
+});
+
+const nc = Reader.readFromString(`N500G01X527.8Y517.4C1=DC(0)`);
+processor.process(nc);
 ```
 
 ## Development
 
-### Setup
-
-Run
-
-```
-yarn
-yarn husky install
-```
-
-to install all dependencies.
-
-### Test
+Run `yarn` to setup project and install all dependencies.
 
 Run `yarn test` to run all tests.
 
-### Linting
-
 Run `yarn run lint` to check for linting issues.
-
-### Build
 
 Run `yarn build` to build.
 
 ## License
 
 All rights reserved to ScaleNC GmbH.
+
+Source Code and Binaries licensed under BSD-3-Clause.
