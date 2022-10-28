@@ -34,7 +34,7 @@ publish-to-npm:
     - yarn
     - yarn publish --access public
 
-publish:
+publish-to-gitlab:
   stage: publish
   only:
     - tags
