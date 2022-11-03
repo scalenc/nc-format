@@ -12,6 +12,22 @@
     "build": "tsc",
     "prepublish": "tsc"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scalenc/nc-format.git"
+  },
+  "keywords": [
+    "NC",
+    "CNC",
+    "computer numerical control",
+    "machine",
+    "TRUMPF"
+  ],
+  "author": "scalenc",
+  "bugs": {
+    "url": "https://github.com/scalenc/nc-format/issues"
+  },
+  "homepage": "https://github.com/scalenc/nc-format",
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.2.21",
