@@ -12,9 +12,9 @@ Additionally, it provides a processor to interpret TRUMPF NC text.
 ## Installation
 
 ```sh
-npm install nc-format
-yarn add nc-format
-pnpm add nc-format
+npm install @scalenc/nc-format
+yarn add @scalenc/nc-format
+pnpm add @scalenc/nc-format
 ```
 
 ## Examples
