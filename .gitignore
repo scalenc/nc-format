@@ -29,3 +29,4 @@ tf-outputs-prod.json
 dump
 
 *.cs
+/.idea/
