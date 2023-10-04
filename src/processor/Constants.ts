@@ -4,7 +4,7 @@ export class Constants {
 
   static readonly FUNC_ABSOLUTE_POS = 'AC';
   static readonly FUNC_RELATIVE_POS = 'IC';
-  static readonly FUNC_ABSOLUTE_ANG = 'DC';
+  static readonly FUNC_ABSOLUTE_ANG = ['DC', 'ACP', 'ACN'];
 
   static readonly CENTER_RADIUS = 'CR';
 
@@ -35,7 +35,7 @@ export function tryOverwriteAbsoluteModeByFunction(functionName: string): boolea
     return true;
   } else if (functionNameUpperCase === Constants.FUNC_RELATIVE_POS) {
     return false;
-  } else if (functionNameUpperCase === Constants.FUNC_ABSOLUTE_ANG) {
+  } else if (Constants.FUNC_ABSOLUTE_ANG.includes(functionNameUpperCase)) {
     return true;
   }
   // Nothing to override.
