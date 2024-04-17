@@ -28,7 +28,6 @@
     "url": "https://github.com/scalenc/nc-format/issues"
   },
   "homepage": "https://github.com/scalenc/nc-format",
-  "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.2.21",
     "@types/mocha": "^8.2.3",
@@ -75,5 +74,6 @@
   },
   "files": [
     "/dist"
-  ]
+  ],
+  "packageManager": "yarn@4.1.1"
 }
