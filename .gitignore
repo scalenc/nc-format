@@ -39,3 +39,5 @@ dump
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+sbom.json
